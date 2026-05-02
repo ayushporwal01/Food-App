@@ -11,3 +11,11 @@
 
 - Class-Based Component 
   - Props
+  - State
+
+- LifeCycle of a Component
+- Lifecycle Methods
+  - React Lifecycle Methods Diagram
+  - componentDidMount: Runs after component has been mounted.
+  - componentDidUpdate: Runs after component value updated.
+  - componentWillUnmount: Runs after component is unmounted.
