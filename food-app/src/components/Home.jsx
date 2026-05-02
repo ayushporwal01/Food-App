@@ -52,12 +52,13 @@ export default function Home() {
   }
 
   const onlineStatus = useOnlineStatus();
-
-  useEffect(() => {
-    if(!onlineStatus) {
-      <h2>Looks like you're offline!! Please check your internet connection.</h2>
-    }
-  }, [])
+  if (!onlineStatus) {
+    return (
+      <h2>
+        Looks like you're offline!! Please check your internet connection.
+      </h2>
+    );
+  }
 
   return (
     <div className={styles.body}>
