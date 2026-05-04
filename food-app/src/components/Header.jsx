@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div className={styles.header}>
+    <div className="w-full h-18 px-10 flex justify-between items-center border border-black ">
       <div className="logo-container">
-        <img className={styles.logo} src={LOGO_URL} alt="Namaste Food Logo" />
+        <img
+          className="w-15 cursor-pointer"
+          src={LOGO_URL}
+          alt="Namaste Food Logo"
+        />
       </div>
       <div className={styles.navItems}>
-        <ul>
+        <ul className="flex gap-x-10 [&_li]:cursor-pointer">
           <li>
             <Link to="/">Home</Link>
           </li>
