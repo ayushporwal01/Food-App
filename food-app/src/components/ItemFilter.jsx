@@ -1,4 +1,3 @@
-import styles from "./ItemFilter.module.css";
 import RestaurantCard from "./RestaurantCard";
 
 export default function ItemFilter({listOfRestaurant, setFilteredRestaurant}) {
@@ -17,14 +16,14 @@ export default function ItemFilter({listOfRestaurant, setFilteredRestaurant}) {
   }
 
   return (
-    <div className={styles.container}>
-      <select className={styles.dropdown} onChange={priceFilter}>
+    <div className="border rounded-sm relative">
+      <select className="w-43 p-1.5 appearance-none cursor-pointer" onChange={priceFilter}>
         <option value="" disabled hidden>Sort By</option>
         <option value="default">Default</option>
         <option value="low">Price: Low to High</option>
         <option value="high">Price: High to Low</option>
       </select>
-      <i className="fa-solid fa-angle-down"></i>
+      <i className="fa-solid fa-angle-down absolute right-1.5 top-2.5 pointer-events-none"></i>
     </div>
   );
 }

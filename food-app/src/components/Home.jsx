@@ -62,27 +62,31 @@ export default function Home() {
         setFilteredRestaurant={setFilteredRestaurant}
       />
 
-      <ItemFilter
-        listOfRestaurant={listOfRestaurant}
-        setFilteredRestaurant={setFilteredRestaurant}
-      />
+      <div className="mt-18">
+        <div className="w-fit">
+          <ItemFilter
+            listOfRestaurant={listOfRestaurant}
+            setFilteredRestaurant={setFilteredRestaurant}
+          />
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-10">
-        {loading ? (
-          Array(8)
-            .fill("")
-            .map((_, i) => <Shimmer key={i} />)
-        ) : error ? (
-          <h2>Error: {error}</h2>
-        ) : filteredRestaurant.length === 0 ? (
-          <p className={styles.noResFoundMsg}>No Restaurants found</p>
-        ) : (
-          filteredRestaurant.map((res) => (
-            <Link key={res?.info?.id} to={"/restaurants/" + res?.info?.id}>
-              <RestaurantCard resData={res} />
-            </Link>
-          ))
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-10">
+          {loading ? (
+            Array(8)
+              .fill("")
+              .map((_, i) => <Shimmer key={i} />)
+          ) : error ? (
+            <h2>Error: {error}</h2>
+          ) : filteredRestaurant.length === 0 ? (
+            <p className={styles.noResFoundMsg}>No Restaurants found</p>
+          ) : (
+            filteredRestaurant.map((res) => (
+              <Link key={res?.info?.id} to={"/restaurants/" + res?.info?.id}>
+                <RestaurantCard resData={res} />
+              </Link>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

@@ -10,9 +10,9 @@ export default function SearchBar({ listOfRestaurant, setFilteredRestaurant }) {
     setFilteredRestaurant(filteredList);
   }
   return (
-    <div className="w-110 h-12 flex relative">
+    <div className="w-50 sm:w-75 md:w-90 lg:w-110 h-12 flex relative">
       <input
-        className="border border-r-0 border-[#afafaf] flex-1 pl-4 pr-13 rounded-sm focus:outline-none"
+        className="w-full border border-r-0 border-[#afafaf] flex-1 pl-4 pr-13 rounded-sm focus:outline-none"
         type="text"
         value={searchText}
         placeholder="Enter a Restaurant Name..."
