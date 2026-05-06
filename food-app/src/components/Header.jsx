@@ -4,13 +4,13 @@ import { Menu } from 'react-feather';
 
 export default function Header() {
   return (
-    <div className="w-full max-w-8xl h-18 px-25 flex justify-between items-center border border-black bg-white sticky top-0 left-0 right-0 z-100">
+    <div className="w-full max-w-8xl h-18 px-10 md:px-20 lg:px-25 flex justify-between items-center border border-black bg-white sticky top-0 left-0 right-0 z-100">
       <img
         className="w-15 cursor-pointer"
         src={LOGO_URL}
         alt="Namaste Food Logo"
       />
-      <ul className="flex gap-x-10 text-lg [&_li]:cursor-pointer">
+      <ul className="hidden md:flex gap-x-10 text-lg [&_li]:cursor-pointer">
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -21,7 +21,7 @@ export default function Header() {
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
-      <Menu size={24} color="#ccc" className="hidden" />
+      <Menu size={35} className="md:hidden cursor-pointer" />
     </div>
   );
 }
