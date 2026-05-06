@@ -20,7 +20,7 @@ export default function RestaurantCard({ resData }) {
           <span>{deliveryTime}</span>
         </span>
 
-        <p className="w-70 overflow-hidden flex-nowrap truncate text-[#696969]">{cuisines.join(", ")}</p>
+        <p className="w-62 overflow-hidden flex-nowrap truncate text-[#696969]">{cuisines.join(", ")}</p>
         <p className="text-md">{costForTwo}</p>
       </div>
     </div>

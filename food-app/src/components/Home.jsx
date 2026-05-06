@@ -62,7 +62,7 @@ export default function Home() {
         setFilteredRestaurant={setFilteredRestaurant}
       />
 
-      <div className="mt-18">
+      <div className="mt-18 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="w-fit">
           <ItemFilter
             listOfRestaurant={listOfRestaurant}
@@ -70,18 +70,22 @@ export default function Home() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-10 pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-10 pb-10 w-full max-w-7xl">
           {loading ? (
             Array(8)
               .fill("")
-              .map((_, i) => <Shimmer key={i} />)
+              .map((_, i) => <Shimmer key={i} className=" w-full max-w-7xl" />)
           ) : error ? (
             <h2>Error: {error}</h2>
           ) : filteredRestaurant.length === 0 ? (
             <p className={styles.noResFoundMsg}>No Restaurants found</p>
           ) : (
             filteredRestaurant.map((res) => (
-              <Link key={res?.info?.id} to={"/restaurants/" + res?.info?.id}>
+              <Link
+                key={res?.info?.id}
+                to={"/restaurants/" + res?.info?.id}
+                className="block w-full h-full"
+              >
                 <RestaurantCard resData={res} />
               </Link>
             ))
