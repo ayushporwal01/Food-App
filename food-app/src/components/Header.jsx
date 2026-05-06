@@ -1,9 +1,10 @@
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { Menu } from 'react-feather';
 
 export default function Header() {
   return (
-    <div className="w-full max-w-8xl h-18 px-25 flex justify-between items-center border border-black ">
+    <div className="w-full max-w-8xl h-18 px-25 flex justify-between items-center border border-black bg-white sticky top-0 left-0 right-0 z-100">
       <img
         className="w-15 cursor-pointer"
         src={LOGO_URL}
@@ -20,6 +21,7 @@ export default function Header() {
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
+      <Menu size={24} color="#ccc" className="hidden" />
     </div>
   );
 }
