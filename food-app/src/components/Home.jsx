@@ -6,6 +6,7 @@ import ItemFilter from "./ItemFilter";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import SideBar from "./SideBar";
 
 export default function Home() {
   const [error, setError] = useState(null);
@@ -62,6 +63,7 @@ export default function Home() {
         setFilteredRestaurant={setFilteredRestaurant}
       />
 
+      <SideBar />
       <div className="mt-18 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="w-fit">
           <ItemFilter
