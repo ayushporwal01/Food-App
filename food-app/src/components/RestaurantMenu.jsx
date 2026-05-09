@@ -18,6 +18,8 @@ export default function RestaurantMenu() {
 
   let cardsWithTitle = categoryCards.filter((card) => card?.card?.card?.title);
 
+  console.log(cardsWithTitle);
+
   if (cardsWithTitle[0]?.card?.card?.title?.toLowerCase() !== "recommended") {
     cardsWithTitle = cardsWithTitle.slice(1);
   }
