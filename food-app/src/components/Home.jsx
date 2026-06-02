@@ -1,18 +1,20 @@
 import { API_URL } from "../utils/constants";
 import RestaurantCard from "./RestaurantCard";
 import SearchBar from "./SearchBar";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ItemFilter from "./ItemFilter";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import SideBar from "./SideBar";
+import userContext from "../utils/userContext";
 
 export default function Home() {
   const [error, setError] = useState(null);
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { loggedInUser, setUserName } = useContext(userContext);
 
   useEffect(() => {
     fetchData();
@@ -62,6 +64,16 @@ export default function Home() {
         listOfRestaurant={listOfRestaurant}
         setFilteredRestaurant={setFilteredRestaurant}
       />
+
+      <div className="mt-15">
+        <label>UserName: </label>
+        <input
+          type="text"
+          className="border pl-1.5"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+      </div>
 
       <div className="mt-18 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="w-fit">
