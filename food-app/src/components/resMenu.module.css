@@ -6,24 +6,29 @@
 
 .menu {
     width: 55%;
-    border: 1px solid black;
     padding: 3rem;
 }
 
-.menuText {
-    margin-top: 1rem;
-    text-align: center;
+.menuDetails > .menuTitle {
+    font-size: 1.8rem;
+}
+
+.menuDetails > .rateCost, .cuisines {
     font-size: 1.1rem;
+}
+
+.menuText {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .menuCategories {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    font-weight: 700;
 }
 
-.menuDetails > h1 {
-    font-size: 1.8rem;
-}
 

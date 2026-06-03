@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import Category from "./Category";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import styles from "./resMenu.module.css";
 
 export default function RestaurantMenu() {
   const [openCategoryIndex, setOpenCategoryIndex] = useState(null);
@@ -37,24 +38,24 @@ export default function RestaurantMenu() {
     infoCard?.card?.card?.info || {};
 
   return (
-    <div className="">
-      <div className="">
-        <div className="">
-          <h1>{name}</h1>
+    <div className={styles.menuContainer}>
+      <div className={styles.menu}>
+        <div className={styles.menuDetails}>
+          <h1 className={styles.menuTitle}>{name}</h1>
 
-          <span className="">
-            <span className="">&#9733;</span>
-            <span className="">{avgRating}</span> &bull;
-            <span className=""> {costForTwoMessage}</span>
-          </span>
+          <div className={styles.rateCost}>
+            <span>&#9733; </span>
+            <span>{avgRating}</span> &bull;
+            <span> {costForTwoMessage}</span>
+          </div>
 
-          <p className="">{cuisines?.join(", ")}</p>
+          <p className={styles.cuisines}>{cuisines?.join(", ")}</p>
         </div>
 
-        <h4 className="">Menu</h4>
+        <h4 className={styles.menuText}>MENU</h4>
 
         {/* Menu Sections */}
-        <div className="">
+        <div className={styles.menuCategories}>
           {categoryCards?.map((section, index) => {
             return (
               <Category
