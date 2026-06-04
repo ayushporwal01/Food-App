@@ -49,7 +49,9 @@ export default function Category({
       >
         {hasSubCategories ? title : `${title} (${totalItems})`}
         {!hasSubCategories && (
-          <span className={styles.CategoryIcon}>{isOpen ? <ChevronUp /> : <ChevronDown />}</span>
+          <span className={styles.CategoryIcon}>
+            {isOpen ? <ChevronUp /> : <ChevronDown />}
+          </span>
         )}
       </h4>
 

@@ -7,6 +7,7 @@ import AppLayout from "./components/AppLayout";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { lazy, Suspense } from "react";
 import "./style.css";
+import Cart from "./components/Cart";
 
 const About = lazy(() => import("./components/About"));
 
@@ -27,6 +28,7 @@ function App() {
             />
             <Route path="contact" element={<Contact />} />
             <Route path="restaurants/:resId" element={<RestaurantMenu />} />
+            <Route path="cart" element={<Cart />} />
           </Route>
 
           <Route path="*" element={<Error />} />

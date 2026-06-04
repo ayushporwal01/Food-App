@@ -1,10 +1,18 @@
+import { useDispatch } from "react-redux";
 import styles from "./item.module.css";
+import { addItem } from "../utils/cartSlice";
 
 export default function Item({ item }) {
   const info = item?.card?.info;
 
   const price = (info?.price ?? info?.defaultPrice ?? 0) / 100;
   const imageId = info?.imageId;
+
+  const dispatch = useDispatch();
+
+  const handleClick = (item) => {
+    dispatch(addItem(item));
+  }
 
   return (
     <div className={styles.itemCard}>
@@ -26,7 +34,7 @@ export default function Item({ item }) {
             alt={info?.name}
           />
         )}
-        <button className={styles.addBtn}>Add</button>
+        <button className={styles.addBtn} onClick={() => handleClick(item)}>Add</button>
       </div>
     </div>
   );

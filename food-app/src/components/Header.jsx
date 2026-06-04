@@ -26,7 +26,6 @@ export default function Header() {
 
   const { loggedInUser } = useContext(userContext);
 
-
   return (
     <div className="w-full max-w-8xl h-18 px-10 md:px-20 lg:px-25 flex justify-between items-center border border-black bg-white sticky top-0 left-0 right-0 z-100">
       <img
