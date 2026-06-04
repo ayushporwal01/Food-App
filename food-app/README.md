@@ -25,3 +25,15 @@
 - Code Splitting / Dynamic Bundling / Chunking / Lazy Loading / On-Demand Loading / Dynamic Import
 
 - lazy(), import(), Suspense
+
+# 2 types of routing in web apps
+- Client-Side Routing 
+- Server-Side Routing
+
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- Selector
