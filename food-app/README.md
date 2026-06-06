@@ -1,8 +1,3 @@
-# Types Of Routing
-- Client Side Routing
-- Server Side Routing
-- Dynamic Routes
-
 # Class-Based Components
 
 # LifeCycle of a Component
@@ -13,13 +8,13 @@
   - componentDidUpdate: Runs after component value updated.
   - componentWillUnmount: Runs after component is unmounted.
 
-- Custom Hooks
+# Custom Hooks
 
-- Code Splitting / Dynamic Bundling / Chunking / Lazy Loading / On-Demand Loading / Dynamic Import
+# Code Splitting / Dynamic Bundling / Chunking / Lazy Loading / On-Demand Loading / Dynamic Import
 
-- lazy(), import(), Suspense
+# lazy(), import(), Suspense
 
-# 2 types of routing in web apps
+# Types Of Routing
 - Client-Side Routing 
 - Server-Side Routing
 
