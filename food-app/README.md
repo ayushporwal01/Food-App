@@ -39,7 +39,13 @@
 - dispatch(action)
 - Selector
 
-# Types Of Testing
+# Types Of Testing(developer)
 1. Unit Testing 
 2. Integration Testing 
 3. End-To-End Testing - e2e testing
+
+# Setting Up Testing
+- Installed React Testing Library
+- Installed Jest
+- Installed Babel Dependencies
+- Configure Babel
