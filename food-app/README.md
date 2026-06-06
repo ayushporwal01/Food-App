@@ -12,8 +12,6 @@
 
 # Code Splitting / Dynamic Bundling / Chunking / Lazy Loading / On-Demand Loading / Dynamic Import
 
-# lazy(), import(), Suspense
-
 # Types Of Routing
 - Client-Side Routing 
 - Server-Side Routing
