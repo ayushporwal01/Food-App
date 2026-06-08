@@ -11,3 +11,12 @@ test("Heading should render in Contact Component", () => {
   //Assertion
   expect(heading).toBeInTheDocument();
 });
+test("Heading should render in Contact Component", () => {
+  render(<Contact />);
+
+  //Querying
+  const inputBoxes = screen.getAllByRole("textbox");
+
+  //Assertion
+  expect(inputBoxes).toBeInTheDocument();
+});
