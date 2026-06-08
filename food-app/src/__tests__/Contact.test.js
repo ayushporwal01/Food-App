@@ -15,7 +15,7 @@ test("Should render input name on the Contact Component", () => {
   render(<Contact />);
 
   //Querying
-  const inputName = screen.getByPlaceholderText("name");
+  const inputName = screen.getByPlaceholderText("Enter your name");
 
   //Assertion
   expect(inputName).toBeInTheDocument();
