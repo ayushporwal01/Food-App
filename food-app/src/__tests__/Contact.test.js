@@ -11,6 +11,15 @@ test("Should render heading on the Contact Component", () => {
   //Assertion
   expect(heading).toBeInTheDocument();
 });
+test("Should render input name on the Contact Component", () => {
+  render(<Contact />);
+
+  //Querying
+  const inputName = screen.getPlaceholderText("name");
+
+  //Assertion
+  expect(inputName).toBeInTheDocument();
+});
 test("Should render 2 input boxes on the Contact Component", () => {
   render(<Contact />);
 
