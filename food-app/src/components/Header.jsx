@@ -9,13 +9,12 @@ import { useSelector } from "react-redux";
 
 export default function Header() {
   const cartItems = useSelector((store) => store.cart.items);
-  
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
     { name: `Cart (${cartItems.length})`, path: "/cart" },
-    { name: "Login", path: "/login" },
   ];
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -40,8 +39,19 @@ export default function Header() {
             <Link to={link.path}>{link.name}</Link>
           </li>
         ))}
+
+        <li>
+          <button
+            onClick={toggleSidebar}
+            className="bg-gray-200 w-15 cursor-pointer"
+          >
+            Login
+          </button>
+        </li>
+
         <li>{loggedInUser}</li>
       </ul>
+
       <button onClick={toggleSidebar} className="md:hidden cursor-pointer">
         <Menu size={35} />
       </button>
