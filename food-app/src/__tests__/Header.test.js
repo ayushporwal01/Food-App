@@ -17,3 +17,17 @@ it("Should render Header Component with a login button", () => {
 
   expect(loginButton).toBeInTheDocument();
 });
+
+it("Should render Header Component with a login button", () => {
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />
+      </Provider>
+    </BrowserRouter>,
+  );
+
+  const loginButton = screen.getByRole("button", { name: "Login" });
+
+  expect(loginButton).toBeInTheDocument();
+});
