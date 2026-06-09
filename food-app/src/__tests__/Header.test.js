@@ -18,7 +18,7 @@ it("Should render Header Component with a login button", () => {
   expect(loginButton).toBeInTheDocument();
 });
 
-it("Should render Header Component with a login button", () => {
+it("Should render Header Component with a Cart Items 0", () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
@@ -27,7 +27,7 @@ it("Should render Header Component with a login button", () => {
     </BrowserRouter>,
   );
 
-  const loginButton = screen.getByRole("button", { name: "Login" });
+  const cartItems = screen.getByText("Cart(0 items)");
 
-  expect(loginButton).toBeInTheDocument();
+  expect(cartItems).toBeInTheDocument();
 });
