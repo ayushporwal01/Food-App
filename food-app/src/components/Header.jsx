@@ -18,9 +18,14 @@ export default function Header() {
   ];
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const [isLogin, setIsLogin] = useState(false);
+  
   function toggleSidebar() {
     setIsSidebarOpen(!isSidebarOpen);
+  }
+
+  function handleLogin() {
+    setIsLogin(!isLogin);
   }
 
   const { loggedInUser } = useContext(userContext);
@@ -42,10 +47,10 @@ export default function Header() {
 
         <li>
           <button
-            onClick={toggleSidebar}
-            className="bg-gray-200 w-15 cursor-pointer"
+            onClick={handleLogin}
+            className="cursor-pointer"
           >
-            Login
+            {isLogin ? "Logout" : "Login"}
           </button>
         </li>
 
