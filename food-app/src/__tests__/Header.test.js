@@ -4,7 +4,6 @@ import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import { BrowserRouter } from "react-router-dom";
-
 it("Should render Header Component with a login button", () => {
   render(
     <BrowserRouter>
