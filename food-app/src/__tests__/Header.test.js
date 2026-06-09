@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Header from "../components/Header";
 import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
@@ -44,4 +44,21 @@ it("Should render Header Component with Cart", () => {
   const cart = screen.getByText(/Cart/); //Regex
 
   expect(cart).toBeInTheDocument();
+});
+
+it("Should change login button to logout on click", () => {
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />
+      </Provider>
+    </BrowserRouter>,
+  );
+
+  const loginButton = screen.getByRole("button", { name: "Login" });
+
+  fireEvent.click(loginButton);
+
+  const logoutButton = screen.getByRole("button", { name: "Logout" });
+  expect(logoutButton).toBeInTheDocument();
 });
