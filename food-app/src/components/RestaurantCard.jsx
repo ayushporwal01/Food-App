@@ -6,6 +6,8 @@ export default function RestaurantCard({ resData }) {
 
   const deliveryTime = sla?.slaString;
 
+  console.log(resData)
+
   const id = resData?.info?.cloudinaryImageId;
 
   return (
