@@ -1,5 +1,5 @@
 const fetchMock = (data) => {
-  global.fetch = jest.fn((data) => {
+  global.fetch = jest.fn(() => {
     return Promise.resolve({
       json: () => {
         return Promise.resolve(data);

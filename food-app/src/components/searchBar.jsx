@@ -16,6 +16,7 @@ export default function SearchBar({ listOfRestaurant, setFilteredRestaurant }) {
         type="text"
         value={searchText}
         placeholder="Enter a Restaurant Name..."
+        data-testid="searchInput"
         onChange={(e) => setSearchText(e.target.value)}
         onKeyDown={(e) => {
           if (e.key == "Enter") {
@@ -23,7 +24,7 @@ export default function SearchBar({ listOfRestaurant, setFilteredRestaurant }) {
           }
         }}
       />
-      <button aria-label="search" className="px-4 py-2.5 border border-l-0 border-[#afafaf] rounded-sm rounded-l-none absolute right-0 bottom-0 top-0 cursor-pointer" onClick={searchFilter}>
+      <button data-testid="searchBtn" className="px-4 py-2.5 border border-l-0 border-[#afafaf] rounded-sm rounded-l-none absolute right-0 bottom-0 top-0 cursor-pointer" onClick={searchFilter}>
         <i className="fa-solid fa-magnifying-glass text-[#7b7574]"></i>
       </button>
     </div>

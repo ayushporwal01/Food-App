@@ -102,6 +102,7 @@ export default function Home() {
               <Link
                 key={res?.info?.id}
                 to={"/restaurants/" + res?.info?.id}
+                data-testid="resCard"
                 className="block w-full h-full"
               >
                 {res?.info?.promoted ? (

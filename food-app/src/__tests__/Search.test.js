@@ -1,24 +1,40 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Home from "../components/Home";
 import fetchMock from "../mocks/fetchMock";
 import MOCK_DATA from "../mocks/mockResListData.json";
 import "@testing-library/jest-dom";
 import { act } from "react";
+import { BrowserRouter } from "react-router-dom";
 
-fetchMock(MOCK_DATA);
+beforeEach(() => fetchMock(MOCK_DATA));
+
+const setup = () =>
+  render(
+    <BrowserRouter>
+      <Home />
+    </BrowserRouter>,
+  );
 
 it("Should render Home Component with Search", async () => {
-  await act(async () => render(<Home />));
+  setup();
 
-  const searchBtn = screen.getByLabelText(/search/i);
+  const searchBtn = screen.getByTestId("searchBtn");
 
   expect(searchBtn).toBeInTheDocument();
 });
 
-it("Should render ", async () => {
-  await act(async () => render(<Home />));
+it("Should render Home Component With Restaurant Cards", async () => {
+  setup();
 
-  const searchBtn = screen.getByLabelText(/search/i);
+  const cardsBeforeSearch = await screen.findAllByTestId("resCard");
+  expect(cardsBeforeSearch).toHaveLength(28);
 
-  expect(searchBtn).toBeInTheDocument();
+  const searchBtn = screen.getByTestId("searchBtn");
+  const searchInput = screen.getByTestId("searchInput");
+
+  fireEvent.change(searchInput, { target: { value: "pizza" } });
+  fireEvent.click(searchBtn);
+
+  const cardsAfterSearch = await screen.findAllByTestId("resCard");
+  expect(cardsAfterSearch).toHaveLength(2);
 });
