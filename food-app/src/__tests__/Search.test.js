@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 import { act } from "react";
 import { BrowserRouter } from "react-router-dom";
 
-beforeEach(() => fetchMock(MOCK_DATA));
+
 
 const setup = () =>
   render(
