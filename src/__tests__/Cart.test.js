@@ -26,6 +26,17 @@ const setup = () => {
   );
 };
 
+const openAccordion = () => {
+  const accordionHeader = await screen.findByText("Recommended (17)");
+  fireEvent.click(accordionHeader);
+}
+
+const addItemsToCart = () => {
+  const addBtn = screen.getAllByRole("button", { name: "Add" });
+  fireEvent.click(addBtn[0]);
+  fireEvent.click(addBtn[1]);
+}
+
 it("Should render all restaurant menu categories", async () => {
   setup();
 
@@ -36,9 +47,7 @@ it("Should render all restaurant menu categories", async () => {
 it("Should expand accordion and show menu items on click", async () => {
   setup();
 
-  const accordionHeader = await screen.findByText("Recommended (17)");
-
-  fireEvent.click(accordionHeader);
+  openAccordion();
 
   const menuItems = await screen.findAllByTestId("menu-item");
 
@@ -47,19 +56,13 @@ it("Should expand accordion and show menu items on click", async () => {
 it("Should add item to cart when add button is clicked and update item count in ui", async () => {
   setup();
 
-  const accordionHeader = await screen.findByText("Recommended (17)");
-
-  fireEvent.click(accordionHeader);
+  openAccordion();
 
   const menuItems = await screen.findAllByTestId("menu-item");
 
   expect(menuItems).toHaveLength(17);
 
-  const addBtn = screen.getAllByRole("button", { name: "Add" });
-
-  fireEvent.click(addBtn[0]);
-
-  fireEvent.click(addBtn[1]);
+  addItemsToCart();
 
   const cartItemText = screen.getByText("Cart (2)");
 
@@ -68,15 +71,9 @@ it("Should add item to cart when add button is clicked and update item count in 
 it("Should add items to cart and reflect those items on cart page", async () => {
   setup();
 
-  const accordionHeader = await screen.findByText("Recommended (17)");
+  openAccordion();
 
-  fireEvent.click(accordionHeader);
-
-  const addBtn = screen.getAllByRole("button", { name: "Add" });
-
-  fireEvent.click(addBtn[0]);
-
-  fireEvent.click(addBtn[1]);
+  addItemsToCart();
 
   const cartItems = await screen.findAllByTestId("cart-items");
 
