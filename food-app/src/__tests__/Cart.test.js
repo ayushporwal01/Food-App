@@ -1,6 +1,10 @@
-import { render } from "@testing-library/react"
+import { render } from "@testing-library/react";
 import RestaurantMenu from "../components/RestaurantMenu";
+import { act } from "react";
+import fetchMock from "../mocks/fetchMock";
 
-it("Should render Restaurant Menu Component", () => {
-    render(<RestaurantMenu />);
-})
+beforeEach(() => fetchMock())
+
+it("Should render Restaurant Menu Component", async () => {
+  await act(() => render(<RestaurantMenu />));
+});
